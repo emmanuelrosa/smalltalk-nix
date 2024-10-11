@@ -21,6 +21,16 @@
             wordsize = "64";
             arch = "64";
         };
+
+        cuis-image-7_0 = pkgs.callPackage ./pkgs/cuis-image {
+            version = "7.0";
+            commit = "7c5091fba8df3d4fb5d61f98e3d3aa1138fac17f";
+            hashes = {
+                imageFile = "sha256-rZAz7e7aP6pYQ59nGD41KNxCHDinrHl+hs/2BwrwZg4=";
+                sourcesFile = "sha256-/1lcTPtLQocOjRQwFmjr6upON0DiG4m/vFum9x4AL1w=";
+                changesFile = "sha256-aOofs1BZEk1P8/cYXDEA5iPipYKekskE7ycHKpQDb/U=";
+            };
+        };
     };
 
   };

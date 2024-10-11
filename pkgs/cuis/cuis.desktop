@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Development;IDE
+Exec=@launcher@
+GenericName=Smalltalk IDE
+Icon=cuis
+Name=Cuis Smalltalk @version@
+Type=Application
+MimeType=application/x-smalltalk-image
+Version=1.4

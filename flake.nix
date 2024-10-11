@@ -31,6 +31,14 @@
                 changesFile = "sha256-aOofs1BZEk1P8/cYXDEA5iPipYKekskE7ycHKpQDb/U=";
             };
         };
+
+        cuis-7_0 = pkgs.callPackage ./pkgs/cuis {
+            version = "7.0";
+            opensmalltalk-vm = self.packages."${system}".opensmalltalk-vm-cog-spur-5_0;
+            smalltalkImage = self.packages."${system}".cuis-image-7_0;
+            mimeInfoFile = ./mime/cuis.xml;
+            mimeTypeFile = ./mime/x-smalltalk-image.xml;
+        };
     };
 
   };

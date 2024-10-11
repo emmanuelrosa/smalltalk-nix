@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-smalltalk-image">
+  <comment>Smalltalk image</comment>
+  <generic-icon name="application-x-executable"/>
+  <glob pattern="*.image"/>
+</mime-type>

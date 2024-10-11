@@ -11,7 +11,7 @@
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages."${system}";
     in {
-        opensmalltalk-vm-cog-spur = pkgs.callPackage ./pkgs/opensmalltalk-vm {
+        opensmalltalk-vm-cog-spur-5_0 = pkgs.callPackage ./pkgs/opensmalltalk-vm {
             version = "5.0";
             release = "202312181441";
             branding = "squeak";

@@ -18,6 +18,8 @@
 , harfbuzz
 , cairo
 , libGL
+, version ? null
+, release ? null
 , branding ? "squeak"
 , vmType ? "cog"
 , memoryManager ? "spur"
@@ -29,10 +31,9 @@
         "squeak-cog-spur-linux-64x64" = "1sr3hx2bp8wasi6dirqb5912d9smbwcb25hwxkfcyy2hdkp4v951";
     };
 in stdenv.mkDerivation rec {
+    inherit version release;
     pname = "opensmalltalk-vm";
-    version = "5.0";
-    release = "202312181441";
-    name = "${pname}-${version}-${release}";
+    name = if version == null || release == null then (abort "opensmalltalk-vm: The `version` and `release` attributes are required.") else "${pname}-${version}-${release}";
 
     src = fetchurl {
         url = "https://github.com/OpenSmalltalk/${pname}/releases/download/${release}/${branding}.${vmType}.${memoryManager}_${os}${wordsize}x${arch}.tar.gz";

@@ -22,19 +22,19 @@
         sha256 = "sha256-g8r2VhLSOzBEs/m7QljHpRQDDvvbQpTc0pPCAHZfLo8=";
     };
 
-    icons = runCommand "cuis-icons" {
+    icons = runCommand "${pname}-icons" {
         nativeBuildInputs = [ imagemagick ];
     } ''
         mkdir $out
 
         for n in 16 24 32 48 64 96 128 256; do
           size=$n"x"$n
-          magick convert ${logo} -resize $size cuis.png
-          install -Dm644 -t $out/hicolor/$size/apps cuis.png
+          magick convert ${logo} -resize $size ${pname}.png
+          install -Dm644 -t $out/hicolor/$size/apps ${pname}.png
         done;
     '';
 
-    launcher = writeScript "cuis-launcher" ''
+    launcher = writeScript "${pname}-launcher" ''
         #! ${bash}/bin/bash
 
         PATH=${lib.makeBinPath [ coreutils zenity ]}

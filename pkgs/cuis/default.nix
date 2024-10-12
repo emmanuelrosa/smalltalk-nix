@@ -59,7 +59,11 @@
                     chmod u+w "$directory/Cuis${version}.image"
                     chmod u+w "$directory/Cuis${version}.changes"
                     chmod u+w "$directory/Cuis${version}.sources"
-                    ${opensmalltalk-vm}/bin/opensmalltalk-vm "$directory/Cuis${version}.image"
+
+                    imagefile="$directory/Cuis${version}.image"
+                    pushd $(dirname "$imagefile")
+                    ${opensmalltalk-vm}/bin/opensmalltalk-vm "$imagefile"
+                    popd
                 fi
             fi
 
@@ -69,7 +73,9 @@
 
                 if [ -n "$imagefile" ]
                 then
+                    pushd $(dirname "$imagefile")
                     ${opensmalltalk-vm}/bin/opensmalltalk-vm "$imagefile"
+                    popd
                 fi
             fi
         fi
